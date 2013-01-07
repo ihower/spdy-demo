@@ -1,1 +1,7 @@
-<%= image_tag("rails.png") %>
+
+<% COUNTRIES_IMAGE.each do |country| %>
+  <%= image_tag("flags/#{country}") %>
+<% end %>
+
+
+<p>conuntry flags from <a href="http://www.free-country-flags.com/">Free Country Flash</a></p>

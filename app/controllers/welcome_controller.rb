@@ -2,9 +2,9 @@ class WelcomeController < ApplicationController
 
   def server_push    
     set_associated_content([ApplicationController.helpers.asset_path("application.css"), 
-                            ApplicationController.helpers.asset_path("application.js"),
-                            ApplicationController.helpers.asset_path("rails.png"),
-                           ], "https://www.ihower.tw" )
+                            ApplicationController.helpers.asset_path("application.js")                           
+                           ] + COUNTRIES_IMAGE.map{|c| ApplicationController.helpers.asset_path("flags/#{c}")},
+                           "https://www.ihower.tw" )
   end
 
   def no_server_push
