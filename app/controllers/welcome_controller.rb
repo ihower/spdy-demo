@@ -2,9 +2,9 @@
 class WelcomeController < ApplicationController
 
   def server_push    
-    set_associated_content([ApplicationController.helpers.asset_path("application.css"), 
-                            ApplicationController.helpers.asset_path("application.js")                           
-                           ] + countries_image.map{|c| ApplicationController.helpers.asset_path("flags/#{c}")},
+    set_associated_content([ [ApplicationController.helpers.asset_path("application.css"), 0], 
+                             [ApplicationController.helpers.asset_path("application.js"), 1],
+                           ] + countries_image.map{|c| [ApplicationController.helpers.asset_path("flags/#{c}"),2 ]},
                            "https://www.ihower.tw" )
   end
 
@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
   end
 
   def set_associated_content(urls, domain)
-    response.headers["X-Associated-Content"] = urls.map{ |u| "\"#{domain}#{u}\"" }.join(",")
+    response.headers["X-Associated-Content"] = urls.map{ |u| "\"#{domain}#{u[0]}\":#{u[1]}" }.join(",")
   end
 
 end
