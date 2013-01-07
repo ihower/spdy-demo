@@ -10,9 +10,6 @@ class WelcomeController < ApplicationController
                            "https://www.ihower.tw" )
   end
 
-  def no_server_push
-  end
-
   protected
 
   def set_countries_image
