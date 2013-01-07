@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
   protected
 
   def set_associated_content(urls, domain)
-    response.headers["X-Associated-Content"] = urls.map{ |u| "\"#{domain}/#{u}\"" }.join(",")
+    response.headers["X-Associated-Content"] = urls.map{ |u| "\"#{domain}#{u}\"" }.join(",")
   end
 
 end
