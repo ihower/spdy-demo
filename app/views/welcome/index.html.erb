@@ -1,7 +1,17 @@
-<h2>Welcome! This is a SPDY demo</h2>
+<h1>Welcome! This is a SPDY demo</h1>
 
-<p>Rails 3.2.10 + Apache + mod_spdy</p>
+<h2>Nginx + <a href="http://nginx.org/patches/spdy/README.txt">SPDY patch</a></h2>
 
-<p><%= link_to "HTTP", 'http://www.ihower.tw/http' %></p>
-<p><%= link_to "SPDY with server push", 'https://www.ihower.tw/server_push' %></p>
-<p><%= link_to "SPDY without server push", 'https://www.ihower.tw/no_server_push' %></p>
+<ul>
+  <li><a href="http://www.ihower.tw:11180/static.html">HTTP</a></li>
+  <li><a href="https://www.ihower.tw:11443/static.html">SPDY</a></li>
+</ul>
+
+<h2>Rails 3.2 + Apache + <a href="https://developers.google.com/speed/spdy/mod_spdy/">mod_spdy</a></h2>
+
+<ul>
+  <li><%= link_to "HTTP", "http://#{request.host_with_port}/http" %></li>
+  <li><%= link_to "SPDY", "https://#{request.host_with_port}/no_server_push" %></li>
+  <li><%= link_to "SPDY + server push", "https://#{request.host_with_port}/server_push" %></li>
+</ul>
+
