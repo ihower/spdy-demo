@@ -4,7 +4,8 @@ SpdyDemo::Application.routes.draw do
   get "server_push" => "welcome#server_push"
   get "no_server_push" => "welcome#no_server_push"
   get "http" => "welcome#http"
-
+  get "static" => "welcome#static"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
