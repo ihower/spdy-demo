@@ -1,7 +1,6 @@
-<h1>Welcome! This is a SPDY demo</h1>
+<h1>Welcome! This is SPDY demo @webconf.tw 2013</h1>
 
-<h2>Nginx + <a href="http://nginx.org/patches/spdy/README.txt">SPDY patch</a></h2>
-
+<h2>Nginx 1.3.10 + <a href="http://nginx.org/patches/spdy/README.txt">SPDY patch</a></h2>
 <ul>
   <li><a href="http://www.ihower.tw:11180/static.html">HTTP</a></li>
   <li><a href="https://www.ihower.tw:11443/static.html">SPDY</a></li>
@@ -12,6 +11,20 @@
 <ul>
   <li><%= link_to "HTTP", "http://#{request.host_with_port}/http" %></li>
   <li><%= link_to "SPDY", "https://#{request.host_with_port}/no_server_push" %></li>
-  <li><%= link_to "SPDY + server push", "https://#{request.host_with_port}/server_push" %></li>
+  <li><%= link_to "SPDY + Server Push", "https://#{request.host_with_port}/server_push" %></li>
 </ul>
 
+Sample code:
+<script src="https://gist.github.com/4517934.js"></script>
+
+<h2>Node 0.8.16 + Express + <a href="https://github.com/indutny/node-spdy">node-spdy</a></h2>
+
+<p>載入 main.js，注意到 Push 的版本跟實際檔案 <a href="https://www.ihower.tw:11164/main.js">main.js</a> 刻意弄不一樣</p>
+
+<ul>
+  <li><a href="https://www.ihower.tw:11164/nopush">SPDY</li>
+  <li><a href="https://www.ihower.tw:11164/push">SPDY + Server Push</li>
+</ul>
+
+Sample code:
+<script src="https://gist.github.com/4517857.js"></script>
