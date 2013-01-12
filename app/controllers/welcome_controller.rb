@@ -8,7 +8,8 @@ class WelcomeController < ApplicationController
     push_associated_content([ 
                              [ApplicationController.helpers.asset_path("application.css"), 0], 
                              [ApplicationController.helpers.asset_path("application.js"), 1],
-                           ] + $SUB_FLAGS.map{|c| [ApplicationController.helpers.asset_path("flags/#{c}"),[2,3,4,5,6,7].sample ]})
+                             [ApplicationController.helpers.asset_path("flags/Taiwan.png"), 2],
+                           ] + $SUB_FLAGS.map{|c| [ApplicationController.helpers.asset_path("flags/#{c}"),[3,4,5,6,7].sample ]})
   end
 
   protected
