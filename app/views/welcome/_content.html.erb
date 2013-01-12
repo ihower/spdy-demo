@@ -1,6 +1,10 @@
 
-<% $countries_image.each do |country| %>
-  <%= image_tag("flags/#{country}") %>
+<% $countries_image.each_with_index do |country, i| %>
+  <%#= image_tag("flags/#{country}") %>
+
+  <div id="flag_<%= i %>">
+  </div>
+
 <% end %>
 
 

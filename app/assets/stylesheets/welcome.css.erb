@@ -1,0 +1,11 @@
+<%# encoding: utf-8 %>
+<% $FLAGS.each_with_index do |c,i| %>
+
+#flag_<%= i %> {
+  background-image: url("<%= asset_path("flags/#{$FLAGS[i]}") %>");
+  width: 80px;
+  height: 53px;
+  float: left;
+}
+
+<% end %>
